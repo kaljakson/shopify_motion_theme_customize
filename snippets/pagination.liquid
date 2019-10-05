@@ -1,0 +1,11 @@
+{% capture previous_label %}
+  {% include 'icon-chevron-left' %}
+  <span class="icon__fallback-text">{{ 'general.pagination.previous' | t }}</span>
+{% endcapture %}
+{% capture next_label %}
+  {% include 'icon-chevron-right' %}
+  <span class="icon__fallback-text">{{ 'general.pagination.next' | t }}</span>
+{% endcapture %}
+<div class="pagination">
+  {{ paginate | default_pagination: previous: previous_label, next: next_label | replace: 'view=ajax', '' }}
+</div>

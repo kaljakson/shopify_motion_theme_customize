@@ -1,0 +1,24 @@
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="pswp__bg"></div>
+  <div class="pswp__scroll-wrap">
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+
+    <div class="pswp__ui pswp__ui--hidden">
+      <button class="btn btn--no-animate btn--body btn--circle pswp__button pswp__button--arrow--left" title="{{ 'general.pagination.previous' | t }}">
+        {% include 'icon-chevron-left' %}
+      </button>
+
+      <button class="btn btn--no-animate btn--body btn--circle btn--large pswp__button pswp__button--close" title="{{ 'general.accessibility.close_modal' | t }}">
+        {% include 'icon-close' %}
+      </button>
+
+      <button class="btn btn--no-animate btn--body btn--circle pswp__button pswp__button--arrow--right" title="{{ 'general.pagination.next' | t }}">
+        {% include 'icon-chevron-right' %}
+      </button>
+    </div>
+  </div>
+</div>

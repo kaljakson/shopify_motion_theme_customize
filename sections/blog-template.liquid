@@ -1,0 +1,160 @@
+{% paginate blog.articles by 5 %}
+
+<div data-section-id="{{ section.id }}" data-section-type="blog">
+  <div class="page-width page-content">
+
+    {% include 'breadcrumbs' %}
+
+    <header class="section-header">
+      <h1 class="section-header__title">
+        {{ blog.title }}
+
+        {% if section.settings.blog_show_tag_filter %}
+          {% if blog.tags.size > 0 %}
+            <select id="BlogTagFilter">
+              <option value="/blogs/{{ blog.handle }}">All</option>
+              {% for tag in blog.all_tags %}
+                {% include 'filter-out-custom-tags' %}
+                <option value="/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" {% if current_tags contains tag %}selected{% endif %}>{{ tag }}</option>
+              {% endfor %}
+            </select>
+          {% endif %}
+        {% endif %}
+
+        {% if section.settings.blog_show_rss %}
+          <a href="{{ shop.url }}{{ blog.url }}.atom" class="rss-link">
+            {% include 'icon-rss' %}
+            <span class="icon__fallback-text">RSS</span>
+          </a>
+        {% endif %}
+      </h1>
+    </header>
+
+    {%- assign is_even_post = false -%}
+    {% for article in blog.articles %}
+      {% assign featured_image_src = '' %}
+
+      {% if article.image %}
+        {% assign featured_image_src = article | img_url: '1024x1024' %}
+      {% endif %}
+
+      <article class="article article--layout" data-aos>
+        <div class="article__image-wrap{% if article.image == blank %} article__image-wrap--empty{% endif %}{% if is_even_post %} article__image-wrap--right{% endif %}">
+        {% unless article.image == blank %}
+          <div class="article__image image-wrap">
+            <div
+              class="article__image--image animate-me lazyload"
+              data-bgset="{% include 'bgset', image: article.image %}"
+              data-sizes="auto">
+            </div>
+            <noscript>
+              <div class="article__image--image animate-me lazyloaded"
+                style="background-image: url({{ article.image | img_url: '500x' }})"></div>
+            </noscript>
+          </div>
+        {% endunless %}
+        </div>
+
+        <div class="article__content{% unless is_even_post %} article__content--right{% endunless %} ">
+          <div class="article__content-meta">
+            <div class="article__date">
+              {% assign first_item = true %}
+              {% if section.settings.blog_show_tags and article.tags.size > 0 %}
+                {% for tag in article.tags %}
+                  {% include 'filter-out-custom-tags' %}
+                  {% unless first_item %} &middot; {% endunless %}{% assign first_item = false %}
+                  <a href="{{ blog.url }}/tagged/{{ tag | handle }}">
+                    {{ tag }}
+                  </a>
+                {% endfor %}
+              {% endif %}
+              {% if section.settings.blog_show_comments and article.comments_count > 0 %}
+                {% unless first_item %} &middot; {% endunless %}{% assign first_item = false %}
+                <a href="{{ article.url }}#comments">
+                  {{ 'blogs.comments.with_count' | t: count: article.comments_count }}
+                </a>
+              {% endif %}
+              {% if section.settings.blog_show_date %}
+                {% unless first_item %} &middot; {% endunless %}{% assign first_item = false %}
+                {{ article.published_at | time_tag: format: 'month_day_year' }}
+              {% endif %}
+            </div>
+
+            <h2 class="h3 article__h3">
+              <a href="{{ article.url }}">{{ article.title }}</a>
+            </h2>
+
+            {% if section.settings.blog_show_author %}
+              <div class="article__author">by {{ article.author }}</div>
+            {% endif %}
+          </div>
+
+          <div class="rte rte--block">
+            {% if article.excerpt.size > 0 %}
+              {{ article.excerpt }}
+            {% else %}
+              {{ article.content | strip_html | truncatewords: 40 }}
+            {% endif %}
+          </div>
+
+          <a href="{{ article.url }}" class="btn">
+            {{ 'blogs.article.read_more' | t }}
+          </a>
+        </div>
+      </article>
+
+      {% comment %}Set the next post as an even one{% endcomment %}
+      {% if is_even_post %}
+        {%- assign is_even_post = false -%}
+      {% else %}
+        {%- assign is_even_post = true -%}
+      {% endif %}
+    {% endfor %}
+
+    {% if paginate.pages > 1 %}
+      {% include 'pagination' %}
+    {% endif %}
+  </div>
+</div>
+
+{% endpaginate %}
+
+{% schema %}
+  {
+    "name": "Blog pages",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "blog_show_tag_filter",
+        "label": "Show tag filter"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_rss",
+        "label": "Show RSS link"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_tags",
+        "label": "Show tags"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_comments",
+        "label": "Show comment count",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": "Show author"
+      }
+    ]
+  }
+{% endschema %}

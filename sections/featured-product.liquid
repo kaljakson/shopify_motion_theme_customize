@@ -1,0 +1,145 @@
+{%- assign product = all_products[section.settings.featured_product] -%}
+
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+
+<div id="ProductSection-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="product"
+  {% if settings.product_zoom_enable %}
+    data-image-zoom="true"
+  {% endif %}>
+
+  {% include 'product-template-variables' %}
+
+  <div class="page-width">
+    <div class="grid">
+      <div class="grid__item medium-up--one-half">
+        {% include 'product-images', section_id: section.id, thumbnail_position: section.settings.thumbnail_position %}
+      </div>
+
+      <div class="grid__item medium-up--one-half">
+        <div class="product-single__meta">
+          {% unless product.empty? %}
+            {%- assign compare_at_price = current_variant.compare_at_price -%}
+            {%- assign price = current_variant.price -%}
+            {%- assign product_available = current_variant.available -%}
+          {% else %}
+            {%- assign compare_at_price = 1999 -%}
+            {%- assign price = 1999 -%}
+            {%- assign product_available = true -%}
+          {% endunless %}
+
+          {% if settings.vendor_enable %}
+            <div class="product-single__vendor">{{ product.vendor }}</div>
+          {% endif %}
+
+          <div class="h1 product-single__title">
+            {% unless product.empty? %}
+              {{ product.title }}
+            {% else %}
+              {{ 'home_page.onboarding.product_title' | t }}
+            {% endunless %}
+          </div>
+
+          {% if settings.sku_enable %}
+            <p id="Sku-{{ section.id }}" class="product-single__sku">
+              {% if current_variant.sku %}
+                {{ current_variant.sku }}
+              {% endif %}
+            </p>
+          {% endif %}
+
+          {% if product.compare_at_price_max > product.price %}
+            <span id="PriceA11y-{{ section.id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+            <span class="product__price-wrap-{{ section.id }}">
+              <span id="ComparePrice-{{ section.id }}" class="product__price product__price--compare">
+                {% if compare_at_price > price %}
+                  {{ compare_at_price | money }}
+                {% endif %}
+              </span>
+            </span>
+            <span id="ComparePriceA11y-{{ section.id }}" class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+          {% else %}
+            <span id="PriceA11y-{{ section.id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+          {% endif %}
+
+          <span id="ProductPrice-{{ section.id }}"
+            class="product__price{% if compare_at_price > price %} on-sale{% endif %}">
+            {{ price | money }}
+          </span>
+
+          <hr class="hr--medium">
+
+          {% unless product.empty? %}
+            {% include 'product-form', section_id: section.id %}
+          {% endunless %}
+
+          <div class="product-single__description rte">
+            {% if section.settings.show_description %}
+              {% unless product.empty? %}
+                {{ product.description }}
+              {% else %}
+                {{ 'home_page.onboarding.product_description' | t }}
+              {% endunless %}
+            {% else %}
+              <p><a href="{{ product.url }}">{{ 'general.accessibility.learn_more' | t }}</a></p>
+            {% endif %}
+          </div>
+
+          {% include 'product-additional-content', section_id: section.id %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% if section.settings.divider %}</div>{% endif %}
+
+{% schema %}
+  {
+    "name": "Featured product",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "product",
+        "id": "featured_product",
+        "label": "Product"
+      },
+      {
+        "type": "select",
+        "id": "thumbnail_position",
+        "label": "Thumbnail position",
+        "default": "beside",
+        "options": [
+          {
+            "value": "beside",
+            "label": "Next to image"
+          },
+          {
+            "value": "below",
+            "label": "Below image"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "show_description",
+        "label": "Show description",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured product",
+        "category": "Product"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,247 @@
+<div
+  data-section-id="{{ section.id }}"
+  data-section-type="fading-images"
+  data-interval="{{ section.settings.slide_speed | times: 1000 }}"
+  data-count="{{ section.blocks.size }}">
+
+  {% style %}
+  .fading-images--{{ section.id }} .fading-images-overlay__title {
+    font-size: {{ section.settings.title_size | times: 0.5 }}px;
+  }
+  @media only screen and (min-width: 590px) {
+    .fading-images--{{ section.id }} .fading-images-overlay__title {
+      font-size: {{ section.settings.title_size }}px;
+    }
+  }
+  .fading-images--{{ section.id }}.fading-images-overlay__overlay::before {
+    background-color: {{ section.settings.color_overlay }};
+    opacity: {{ section.settings.color_overlay_opacity | divided_by: 100.0 }};
+  }
+  .fading-images--{{ section.id }} .active-image {
+    animation-duration: {{ section.settings.slide_speed | times: 1000 }}ms;
+  }
+  .fading-images--{{ section.id }} .active-image.compensation {
+    animation-duration: {{ section.settings.slide_speed | times: 1000 | plus: 400 }}ms;
+  }
+  .fading-images--{{ section.id }} .finished-image {
+    animation-duration: 1000ms;
+  }
+  {% endstyle %}
+
+  <div class="fading-images fading-images--{{ section.id }} fading-images--{{ section.settings.section_height }} fading-images-overlay__overlay loading">
+    <div class="fading-images-overlay__inner">
+      <div class="page-width text-center">
+        <div class="fading-images-overlay__titles">
+          <div class="animation-cropper">
+            <div class="fading-images-overlay__title fading-images-overlay__title--1"></div>
+          </div>
+          {% if section.settings.title_lines == "2" %}
+          <div class="animation-cropper">
+            <div class="fading-images-overlay__title fading-images-overlay__title--2"></div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    {% for block in section.blocks %}
+      {% if block.settings.image != blank %}
+        <div
+          class="fading-images__item fading-images__item--{{ block.id }} lazyload"
+          data-bgset="{% include 'bgset', image: block.settings.image %}"
+          data-sizes="auto"
+          data-slide-index="{{ forloop.index }}"
+          data-slide-title1="{{ block.settings.slide_title1 }}"
+          data-slide-title2="{{ block.settings.slide_title2 }}"
+          style="background-position: {{ block.settings.focal_point }};">
+        </div>
+        <noscript>
+          <div
+            class="fading-images__item fading-images__item--{{ block.id }}"
+            data-slide-index="{{ forloop.index }}"
+            data-slide-title1="{{ block.settings.slide_title1 }}"
+            data-slide-title2="{{ block.settings.slide_title2 }}"
+            style="background-image: url({{ block.settings.image | img_url: '1400x' }}); background-position: {{ block.settings.focal_point }};">
+          </div>
+        </noscript>
+      {% else %}
+        {% capture placeholder %}lifestyle-{% cycle 1,2 %}{% endcapture %}
+        <div class="fading-images__item fading-images__item--{{ block.id }} lazyloaded"
+          data-slide-index="{{ forloop.index }}"
+          data-slide-title1="{{ block.settings.slide_title1 }}"
+          data-slide-title2="{{ block.settings.slide_title2 }}">
+            {{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Fading image hero",
+    "class": "index-section--hero",
+    "max_blocks": 6,
+    "settings": [
+      {
+        "type": "select",
+        "id": "title_lines",
+        "label": "Title style",
+        "default": "2",
+        "options": [
+          {
+            "label": "1 line",
+            "value": "1"
+          },
+          {
+            "label": "2 lines",
+            "value": "2"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "title_size",
+        "label": "Title size",
+        "default": 45,
+        "min": 30,
+        "max": 100,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "slide_speed",
+        "label": "Change images every",
+        "default": 5,
+        "min": 3,
+        "max": 10,
+        "step": 1,
+        "unit": "s"
+      },
+      {
+        "type": "color",
+        "id": "color_overlay",
+        "label": "Overlay",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "color_overlay_opacity",
+        "label": "Opacity",
+        "default": 30,
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "%"
+      },
+      {
+        "type": "range",
+        "id": "section_height",
+        "label": "Section height",
+        "default": 650,
+        "min": 250,
+        "max": 750,
+        "step": 100,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "focal_point",
+            "label": "Focal point",
+            "info": "Used to keep the subject of your photo in view.",
+            "default": "center center",
+            "options": [
+              {
+                "value": "top left",
+                "label": "Top left"
+              },
+              {
+                "value": "top center",
+                "label": "Top center"
+              },
+              {
+                "value": "top right",
+                "label": "Top right"
+              },
+              {
+                "value": "center left",
+                "label": "Left"
+              },
+              {
+                "value": "center center",
+                "label": "Center"
+              },
+              {
+                "value": "center right",
+                "label": "Right"
+              },
+              {
+                "value": "bottom left",
+                "label": "Bottom left"
+              },
+              {
+                "value": "bottom center",
+                "label": "Bottom center"
+              },
+              {
+                "value": "bottom right",
+                "label": "Bottom right"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "slide_title1",
+            "label": "Title line 1"
+          },
+          {
+            "type": "text",
+            "id": "slide_title2",
+            "label": "Title line 2"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Fading image hero",
+        "category": "Image",
+        "blocks": [
+          {
+            "type": "image",
+            "settings": {
+              "slide_title1": "Beautifully animated",
+              "slide_title2": "titles and images"
+            }
+          },
+          {
+            "type": "image",
+            "settings": {
+              "slide_title1": "Use this section",
+              "slide_title2": "to impress customers"
+            }
+          },
+          {
+            "type": "image",
+            "settings": {
+              "slide_title1": "And highlight",
+              "slide_title2": "important details"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

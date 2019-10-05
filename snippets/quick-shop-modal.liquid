@@ -1,0 +1,20 @@
+<div id="QuickShopModal-{{ product.id }}" class="modal modal--square modal--quick-shop" data-product-id="{{ product.id }}">
+  <div class="modal__inner">
+    <div class="modal__centered">
+      <div class="modal__centered-content">
+        {% include 'product-template',
+          description_style: 'default',
+          image_container_width: 'medium',
+          section_id: product.id,
+          social: false,
+          isModal: true
+        %}
+      </div>
+
+      <button type="button" class="modal__close js-modal-close text-link">
+        {% include 'icon-close' %}
+        <span class="icon__fallback-text">{{ 'general.accessibility.close_modal' | t | json }}</span>
+      </button>
+    </div>
+  </div>
+</div>

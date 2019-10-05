@@ -1,0 +1,86 @@
+{% assign count = section.settings.count | times: 5 %}
+
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+
+<div data-section-id="{{ section.id }}" data-section-type="instagram" class="instagram-section">
+  <div class="page-width">
+
+    {% if section.settings.title != blank %}
+      <header class="section-header">
+        <h2 class="section-header__title">{{ section.settings.title }}</h2>
+      </header>
+    {% endif %}
+
+    <div class="instagram-feed-wrap instagram-feed-wrap--{{ section.settings.count }}">
+      <div class="instagram-feed-wrap__reflow-fix"></div>
+      {% if section.settings.client_id != blank %}
+        <div
+          id="Instafeed-{{section.id}}"
+          class="grid grid--uniform grid--no-gutters instagram-holder"
+          data-user-id="{{ section.settings.client_id | split: '.' | first }}"
+          data-client-id="{{ section.settings.client_id | strip }}"
+          data-count="{{ count }}"></div>
+      {% else %}
+        <div class="grid grid--uniform grid--no-gutters">
+          {% for i in (1..count) %}
+            <div class="grid__item small--one-half medium-up--one-fifth">
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+
+{% if section.settings.divider %}</div>{% endif %}
+
+{% schema %}
+  {
+    "name": "Instagram feed",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Find us on Instagram"
+      },
+      {
+        "type": "text",
+        "id": "client_id",
+        "label": "Instagram Access Token",
+        "info": "No token? [Create one here](https://archetypethemes.co/instagram). If no images show up after inserting your access token, it's likely invalid. No error will display on the page."
+      },
+      {
+        "type": "select",
+        "id": "count",
+        "label": "Number of rows",
+        "options": [
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          }
+        ],
+        "default": "1"
+      },
+      {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      }
+    ],
+    "presets": [
+      {
+        "name": "Instagram feed",
+        "category": "Social media"
+      }
+    ]
+  }
+{% endschema %}

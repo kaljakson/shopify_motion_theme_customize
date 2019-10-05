@@ -1,0 +1,44 @@
+<div class="site-nav site-nav--icons">
+  {% if settings.enable_currencies %}
+    {% include 'currency-picker', picker_id: 'header', currency_class: 'currency-picker--header medium-down--hide' %}
+  {% endif %}
+  <div class="site-nav__icons">
+    {% if shop.customer_accounts_enabled %}
+      <a class="site-nav__link site-nav__link--icon medium-down--hide" href="{{ routes.account_url }}">
+        {% include 'icon-user' %}
+        <span class="icon__fallback-text">
+          {% if customer %}
+            {{ 'layout.customer.account' | t }}
+          {% else %}
+            {{ 'layout.customer.log_in' | t }}
+          {% endif %}
+        </span>
+      </a>
+    {% endif %}
+
+    {% if section.settings.header_search_enable %}
+      <a href="{{ routes.search_url }}" class="site-nav__link site-nav__link--icon js-search-header js-no-transition{% if section.settings.main_menu_alignment == 'center' or section.settings.main_menu_alignment == 'center-split' %} large-up--hide{% endif %}">
+        {% include 'icon-search' %}
+        <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
+      </a>
+    {% endif %}
+
+    {% if section.settings.main_menu_alignment == 'left' or section.settings.main_menu_alignment == 'left-center' or section.settings.main_menu_alignment == 'left-drawer' %}
+      <button
+        type="button"
+        class="site-nav__link site-nav__link--icon js-drawer-open-nav{% if section.settings.main_menu_alignment == 'left' or section.settings.main_menu_alignment == 'left-center' %} large-up--hide{% endif %}"
+        aria-controls="NavDrawer">
+        {% include 'icon-hamburger' %}
+        <span class="icon__fallback-text">{{ 'general.drawers.navigation' | t }}</span>
+      </button>
+    {% endif %}
+
+    <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon js-drawer-open-cart js-no-transition" aria-controls="CartDrawer">
+      <span class="cart-link">
+        {% include 'icon-cart' %}
+        <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
+        <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}"></span>
+      </span>
+    </a>
+  </div>
+</div>

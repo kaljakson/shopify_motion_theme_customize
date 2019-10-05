@@ -1,0 +1,56 @@
+{% style %}
+  @media screen and (max-width: 589px) {
+    .background-media-text--{{ block.id }} {
+      background: {{ block.settings.color_border }};
+    }
+  }
+  .background-media-text--{{ block.id }} .background-media-text__image {
+    background-position: {{ block.settings.alignment }};
+  }
+{% endstyle %}
+
+<div
+  class="background-media-text background-media-text--{{ block.id }} background-media-text--{{ block.settings.height }} loaded"
+  data-aos="background-media-text__animation">
+
+  <div
+    class="background-media-text__image{% if block.settings.image != blank %} lazyload{% endif %}"
+    {% if block.settings.image != blank %}
+      data-bgset="{% include 'bgset', image: block.settings.image %}"
+      data-sizes="auto"
+    {% endif %}>
+    {% if block.settings.image == blank %}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {% endif %}
+  </div>
+  {% if block.settings.subtitle != blank or block.settings.title != blank or block.settings.text != blank %}
+    <div class="background-media-text__inner">
+      <div class="page-width">
+        <div class="background-media-text__aligner background-media-text--{{ block.settings.layout }}">
+          <div class="animation-cropper">
+            <div class="animation-contents">
+              <div class="background-media-text__text larger-text">
+                {% if block.settings.subtitle %}
+                  <p class="subtitle">{{ block.settings.subtitle }}</p>
+                {% endif %}
+                {% if block.settings.title != blank %}
+                  <h2 class="h3">{{ block.settings.title | escape }}</h2>
+                {% endif %}
+                {% if block.settings.text != blank %}
+                  <div class="rte background-media-text__subtext">{{ block.settings.text }}</div>
+                {% endif %}
+                {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+                  <a href="{{ block.settings.button_link }}" class="btn">
+                    {{ block.settings.button_label }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+<div class="background-media-text__spacer background-media-text--{{ block.settings.height }}"></div>

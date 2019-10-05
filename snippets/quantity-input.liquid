@@ -1,0 +1,21 @@
+<div class="js-qty__wrapper">
+  <input type="text" id="Quantity-{{ id }}"
+    class="js-qty__num"
+    value="{{ qty }}"
+    min="{{ min }}"
+    aria-label="quantity"
+    pattern="[0-9]*"
+    name="quantity">
+  <button type="button"
+    class="js-qty__adjust js-qty__adjust--minus"
+    aria-label="{{ 'cart.general.reduce_quantity' | t }}">
+      {% include 'icon-minus' %}
+      <span class="icon__fallback-text" aria-hidden="true">&minus;</span>
+  </button>
+  <button type="button"
+    class="js-qty__adjust js-qty__adjust--plus"
+    aria-label="{{ 'cart.general.increase_quantity' | t }}">
+      {% include 'icon-plus' %}
+      <span class="icon__fallback-text" aria-hidden="true">+</span>
+  </button>
+</div>
