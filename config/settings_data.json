@@ -5,6 +5,11 @@
     "color_borders": "#e8e8e1",
     "color_button": "#111111",
     "color_button_text": "#fff",
+    "color_cart_dot": "#ff4f33",
+    "color_header": "#fff",
+    "color_header_text": "#000",
+    "color_announcement": "#1c1d1d",
+    "color_announcement_text": "#fff",
     "color_footer": "#111111",
     "color_footer_text": "#fff",
     "color_drawer_background": "#ffffff",
@@ -12,6 +17,8 @@
     "color_drawer_border": "#e8e8e1",
     "color_drawer_button": "#111111",
     "color_drawer_button_text": "#ffffff",
+    "color_modal_overlays": "#000",
+    "color_image_text": "#fff",
     "color_image_2": "#000000",
     "color_image_2_opacity": 0,
     "color_image_1": "#000000",
@@ -23,6 +30,7 @@
     "type_header_base_size": 35,
     "type_header_line_height": 1.2,
     "type_header_accent_transform": true,
+    "type_headers_align_text": true,
     "type_base_font_family": "futura_n4",
     "type_base_spacing": "25",
     "type_base_size": 17,
@@ -39,13 +47,58 @@
     "animate_images_style": "zoom-fade",
     "animate_buttons": true,
     "animate_underlines": true,
+    "vendor_enable": true,
+    "sku_enable": false,
+    "quantity_enable": false,
+    "variant_labels_enable": true,
+    "variant_type": "button",
+    "enable_payment_button": true,
+    "inventory_enable": false,
+    "inventory_threshold": 10,
+    "product_save_amount": true,
+    "product_save_type": "dollar",
+    "product_zoom_enable": true,
+    "quick_shop_enable": true,
     "quick_shop_text": "Quick view",
-    "cart_type": "drawer",
+    "product_hover_image": false,
+    "product_grid_image_size": "natural",
+    "product_color_swatches": false,
+    "collection_color_swatches": false,
+    "product_video_width": "1280",
+    "product_video_height": "720",
+    "product_video_style": "muted",
+    "product_content_1": "",
+    "product_content_2": "",
+    "product_content_3": "",
+    "product_contact": false,
+    "product_contact_title": "Ask a question",
+    "product_contact_show_phone": false,
+    "enable_product_reviews": false,
+    "reviews_layout": "expandable",
+    "cart_type": "page",
+    "cart_additional_buttons": false,
+    "cart_notes_enable": false,
+    "cart_terms_conditions_enable": false,
+    "cart_terms_conditions_link": "",
+    "enable_currencies": true,
     "currency_format": "money_format",
     "supported_currencies": "USD CAD INR GBP AUD EUR JPY",
+    "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
+    "social_twitter_link": "https:\/\/twitter.com\/shopify",
+    "social_pinterest_link": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/krissycela\/?hl=en",
+    "social_snapchat_link": "",
+    "social_tumblr_link": "",
+    "social_linkedin_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": true,
+    "homepage_social_image": "",
+    "favicon": "",
+    "show_breadcrumbs": false,
+    "search_type": "product,article,page",
     "checkout_header_image": "",
     "checkout_logo_image": "",
     "checkout_logo_position": "left",
@@ -60,6 +113,7 @@
     "checkout_accent_color": "#111111",
     "checkout_button_color": "#111111",
     "checkout_error_color": "#ff6d6d",
+    "customer_accounts_enabled": true,
     "default_currency": "USD",
     "color_image_bg": "#000000",
     "breadcrumb": true,
@@ -71,12 +125,33 @@
     "sections": {
       "header": {
         "type": "header",
+        "blocks": {
+          "1570425931225": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo2_ef63b9c8-127f-4d67-9ad1-54eac6ed3de0.png",
+              "logo-inverted": "",
+              "desktop_logo_width": 400,
+              "mobile_logo_width": 200
+            }
+          }
+        },
+        "block_order": [
+          "1570425931225"
+        ],
         "settings": {
           "main_menu_link_list": "main-menu",
-          "sticky_index": true,
+          "main_menu_alignment": "left",
+          "header_style": "sticky",
+          "sticky_index": false,
           "sticky_collection": false,
-          "header_search_enable": false,
-          "show_announcement": true
+          "header_search_enable": true,
+          "type_navigation_size": 20,
+          "type_navigation_style": true,
+          "show_announcement": false,
+          "announcement_text": "Free shipping and returns",
+          "announcement_link": "",
+          "announcement_closable": false
         }
       },
       "footer": {
@@ -85,12 +160,23 @@
           "1494292481350": {
             "type": "logo_social",
             "settings": {
+              "logo": "",
+              "desktop_logo_height": 50,
+              "container_width": 20
+            }
+          },
+          "1494301487049": {
+            "type": "menu",
+            "settings": {
+              "show_footer_title": true,
+              "menu": "footer",
               "container_width": 20
             }
           },
           "1494292485313": {
             "type": "menu",
             "settings": {
+              "show_footer_title": true,
               "menu": "main-menu",
               "container_width": 20
             }
@@ -98,14 +184,10 @@
           "1494292487693": {
             "type": "newsletter",
             "settings": {
-              "container_width": 33
-            }
-          },
-          "1494301487049": {
-            "type": "menu",
-            "settings": {
-              "menu": "footer",
-              "container_width": 20
+              "show_footer_title": true,
+              "title": "Sign up and save",
+              "richtext": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.<\/p>",
+              "container_width": 40
             }
           }
         },
@@ -116,7 +198,9 @@
           "1494292487693"
         ],
         "settings": {
-          "show_payment_icons": false
+          "show_payment_icons": false,
+          "show_copyright": true,
+          "copyright_text": ""
         }
       },
       "collection-template": {
@@ -124,6 +208,8 @@
         "settings": {
           "per_row": 4,
           "collection_image_enable": true,
+          "collection_subnav_style": "inline",
+          "collection_tags_style": "none",
           "collection_sort_enable": false
         }
       },
@@ -131,23 +217,20 @@
         "type": "product-template",
         "settings": {
           "image_size": "medium",
+          "thumbnail_position": "beside",
+          "description_style": "default",
           "social_enable": true
         }
       },
       "article-template": {
         "type": "article-template",
         "settings": {
+          "blog_show_image": true,
           "blog_show_tags": true,
           "blog_show_date": true,
           "blog_show_comments": true,
           "blog_show_author": false,
           "social_sharing_blog": true
-        }
-      },
-      "1498163293234": {
-        "type": "featured-content",
-        "settings": {
-          "divider": false
         }
       },
       "1498501481980": {
@@ -156,28 +239,28 @@
           "1498501481980-0": {
             "type": "image",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/Facetune_07-10-2019-22-50-56.JPG",
               "focal_point": "center center",
-              "slide_title1": "Beautifully animated",
-              "slide_title2": "titles and images"
+              "slide_title1": "Muscle building workouts",
+              "slide_title2": ""
             }
           },
           "1498501481980-1": {
             "type": "image",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/Facetune_19-09-2019-11-20-39.JPG",
               "focal_point": "center center",
-              "slide_title1": "Use this section",
-              "slide_title2": "to impress"
+              "slide_title1": "Home training programs",
+              "slide_title2": ""
             }
           },
           "1498501481980-2": {
             "type": "image",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/Facetune_29-09-2019-15-56-49.JPG",
               "focal_point": "center center",
-              "slide_title1": "And highlight",
-              "slide_title2": "important details"
+              "slide_title1": "Full body conditioning",
+              "slide_title2": ""
             }
           }
         },
@@ -187,10 +270,12 @@
           "1498501481980-2"
         ],
         "settings": {
+          "title_lines": "2",
+          "title_size": 45,
           "slide_speed": 5,
-          "color_overlay": "#000",
-          "color_overlay_opacity": 30,
-          "section_height": 550
+          "color_overlay": "#050505",
+          "color_overlay_opacity": 20,
+          "section_height": 650
         }
       },
       "blog-template": {
@@ -206,69 +291,19 @@
       },
       "1566999869051": {
         "type": "featured-collection-switcher",
-        "settings": {}
-      },
-      "1499789718857": {
-        "type": "featured-collections",
-        "blocks": {
-          "1499789718857-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "",
-              "size": "wide"
-            }
-          },
-          "1499789718857-1": {
-            "type": "collection",
-            "settings": {
-              "collection": "",
-              "size": "square-small"
-            }
-          },
-          "1499789718857-2": {
-            "type": "collection",
-            "settings": {
-              "collection": "",
-              "size": "square-small"
-            }
-          },
-          "1499789718857-3": {
-            "type": "collection",
-            "settings": {
-              "collection": "",
-              "size": "square-small"
-            }
-          },
-          "1499789718857-4": {
-            "type": "collection",
-            "settings": {
-              "collection": "",
-              "size": "square-small"
-            }
-          },
-          "1499789718857-5": {
-            "type": "collection",
-            "settings": {
-              "collection": "",
-              "size": "wide"
-            }
-          }
-        },
-        "block_order": [
-          "1499789718857-0",
-          "1499789718857-1",
-          "1499789718857-2",
-          "1499789718857-3",
-          "1499789718857-4",
-          "1499789718857-5"
-        ],
+        "disabled": true,
         "settings": {
-          "title": "",
+          "title": "Most popular",
+          "collection1": "frontpage",
+          "collection2": "",
+          "per_row": 4,
+          "view_all": true,
           "divider": false
         }
       },
       "1499790529450": {
         "type": "hero-video",
+        "disabled": true,
         "settings": {
           "title": "Bring your\nbrand to life.",
           "title_size": 80,
@@ -276,27 +311,14 @@
           "link_text": "",
           "link": "",
           "text_align": "vertical-bottom horizontal-left",
-          "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-          "section_height": "650px"
-        }
-      },
-      "1499790633921": {
-        "type": "background-image-text",
-        "settings": {
-          "subtitle": "Impressive",
-          "title": "Large image and text",
-          "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
-          "button_label": "",
-          "button_link": "",
-          "image": "",
-          "alignment": "center",
-          "color_border": "#f4f4f4",
-          "layout": "left",
-          "height": 650
+          "video_url": "https:\/\/www.youtube.com\/watch?v=4upslJhSW68",
+          "section_height": "650px",
+          "mobile_height": "auto"
         }
       },
       "1499790731541": {
         "type": "collection-callout",
+        "disabled": true,
         "settings": {
           "collection": "",
           "subtitle": "Brand new",
@@ -306,54 +328,7 @@
           "cta_link1": "",
           "cta_text2": "Shop All",
           "cta_link2": "",
-          "divider": false
-        }
-      },
-      "1499790782828": {
-        "type": "text-columns",
-        "blocks": {
-          "1499790782828-0": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "",
-              "title": "Example title",
-              "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
-              "button_label": "",
-              "button_link": ""
-            }
-          },
-          "1499790782828-1": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "",
-              "title": "Example title",
-              "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
-              "button_label": "",
-              "button_link": ""
-            }
-          },
-          "1499790782828-2": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "",
-              "title": "Example title",
-              "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
-              "button_label": "",
-              "button_link": ""
-            }
-          }
-        },
-        "block_order": [
-          "1499790782828-0",
-          "1499790782828-1",
-          "1499790782828-2"
-        ],
-        "settings": {
-          "title": "",
-          "align_text": "left",
+          "layout": "right",
           "divider": false
         }
       },
@@ -362,25 +337,85 @@
         "blocks": {
           "product-image-row": {
             "type": "image-row",
-            "settings": {}
+            "settings": {
+              "image_1": "",
+              "image_1_link": "",
+              "image_2": "",
+              "image_2_link": "",
+              "image_3": "",
+              "image_3_link": "",
+              "image_4": "",
+              "image_4_link": "",
+              "enable_gutter": false,
+              "enable_zoom": true
+            }
           },
           "product-text-and-image": {
             "type": "text-and-image",
-            "settings": {}
+            "settings": {
+              "image": "",
+              "image_width": 500,
+              "subtitle": "Improved",
+              "title": "Image with text",
+              "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+              "button_label": "Optional button",
+              "button_link": "",
+              "layout": "left"
+            }
           },
           "product-background-image-text": {
             "type": "background-image-text",
             "settings": {
-              "layout": "right"
+              "subtitle": "Impressive",
+              "title": "Large image with text box",
+              "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
+              "button_label": "",
+              "button_link": "",
+              "image": "",
+              "alignment": "center",
+              "color_border": "#f4f4f4",
+              "layout": "right",
+              "height": 550
             }
           },
           "product-text-columns": {
             "type": "text-columns",
-            "settings": {}
+            "settings": {
+              "title": "",
+              "align_text": "left",
+              "enable_image_1": true,
+              "image_1": "",
+              "title_1": "Example title",
+              "text_1": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
+              "button_label_1": "",
+              "button_link_1": "",
+              "enable_image_2": true,
+              "image_2": "",
+              "title_2": "Example title",
+              "text_2": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
+              "button_label_2": "",
+              "button_link_2": "",
+              "enable_image_3": true,
+              "image_3": "",
+              "title_3": "Example title",
+              "text_3": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
+              "button_label_3": "",
+              "button_link_3": ""
+            }
           },
           "product-hero-video": {
             "type": "hero-video",
-            "settings": {}
+            "settings": {
+              "title": "Bring your\nbrand to life.",
+              "title_size": 80,
+              "subheading": "Seamless hero videos",
+              "link_text": "Optional button",
+              "link": "",
+              "text_align": "vertical-bottom horizontal-left",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+              "section_height": "650px",
+              "mobile_height": "auto"
+            }
           }
         },
         "block_order": [
@@ -390,36 +425,101 @@
           "product-text-columns",
           "product-hero-video"
         ],
-        "settings": {}
+        "settings": {
+          "image_size": "medium",
+          "thumbnail_position": "beside",
+          "description_style": "default",
+          "social_enable": true
+        }
       },
       "page-sections-template": {
         "type": "page-sections-template",
         "blocks": {
           "page-fading-images": {
             "type": "fading-images",
-            "settings": {}
+            "settings": {
+              "title_lines": "2",
+              "title_size": 45,
+              "slide_speed": 5,
+              "color_overlay": "#000",
+              "color_overlay_opacity": 30,
+              "section_height": 650,
+              "enable_image_1": true,
+              "image_1": "",
+              "focal_point_1": "center center",
+              "slide_title_1a": "Beautifully animated",
+              "slide_title_1b": "titles and images",
+              "enable_image_2": true,
+              "image_2": "",
+              "focal_point_2": "center center",
+              "slide_title_2a": "Use this section",
+              "slide_title_2b": "to impress customers",
+              "enable_image_3": false,
+              "image_3": "",
+              "focal_point_3": "center center",
+              "slide_title_3a": "",
+              "slide_title_3b": ""
+            }
           },
           "page-rich-text": {
             "type": "rich-text",
             "settings": {
               "title": "",
+              "text": "<p>Use this section for any descriptive text you need to fill out your pages or to add introductory headings between other blocks.<\/p>",
               "align_text": "center",
+              "narrow_column": true,
               "enlarge_text": true
             }
           },
           "page-text-columns": {
             "type": "text-columns",
-            "settings": {}
+            "settings": {
+              "title": "",
+              "align_text": "left",
+              "enable_image_1": true,
+              "image_1": "",
+              "title_1": "Example title",
+              "text_1": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
+              "button_label_1": "",
+              "button_link_1": "",
+              "enable_image_2": true,
+              "image_2": "",
+              "title_2": "Example title",
+              "text_2": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
+              "button_label_2": "",
+              "button_link_2": "",
+              "enable_image_3": true,
+              "image_3": "",
+              "title_3": "Example title",
+              "text_3": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
+              "button_label_3": "",
+              "button_link_3": ""
+            }
           },
           "page-background-image-text": {
             "type": "background-image-text",
             "settings": {
-              "layout": "right"
+              "subtitle": "Impressive",
+              "title": "Large image with text box",
+              "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
+              "button_label": "",
+              "button_link": "",
+              "image": "",
+              "alignment": "center",
+              "color_border": "#f4f4f4",
+              "layout": "right",
+              "height": 550
             }
           },
           "page-featured-collection": {
             "type": "featured-collection",
-            "settings": {}
+            "settings": {
+              "title": "Featured collection",
+              "collection": "",
+              "per_row": 4,
+              "rows": 1,
+              "view_all": true
+            }
           }
         },
         "block_order": [
@@ -429,18 +529,153 @@
           "page-background-image-text",
           "page-featured-collection"
         ],
-        "settings": {}
+        "settings": {
+          "page_title_enable": false,
+          "page_content_enable": false
+        }
+      },
+      "newsletter-popup": {
+        "type": "newsletter-popup",
+        "settings": {
+          "mode": "enabled",
+          "popup_seconds": 5,
+          "popup_days": 30,
+          "popup_title": "Sign up and save",
+          "popup_image": "",
+          "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.<\/p>",
+          "close_text": "No thanks",
+          "enable_newsletter": true,
+          "button_label": "Optional button",
+          "button_link": "",
+          "enable_button": false
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "product_recommendations_heading": "You may also like",
+          "related_count": 4
+        }
+      },
+      "product-collection-links": {
+        "type": "product-collection-links",
+        "settings": {
+          "collection_links_enable": true
+        }
+      },
+      "1570414502166": {
+        "type": "contact-form",
+        "settings": {
+          "title": "LET ME SLIDE INTO YOUR INBOX",
+          "show_phone": false,
+          "narrow_column": true
+        }
+      },
+      "1570415718276": {
+        "type": "instagram",
+        "settings": {
+          "title": "Find us on Instagram - please add white dividers between the images",
+          "client_id": "3155485111.2a46ab3.6dc62118303f44b38129b90b10398550",
+          "count": "2",
+          "divider": false
+        }
+      },
+      "password-header": {
+        "type": "password-header",
+        "settings": {
+          "logo": "",
+          "desktop_logo_height": 100,
+          "mobile_logo_height": 60
+        }
+      },
+      "password-content": {
+        "type": "password-content",
+        "settings": {
+          "title": "Opening Soon",
+          "newsletter_enable": true,
+          "newsletter_heading": "<p>Get notified when we launch<\/p>",
+          "newsletter_placeholder": "Email address",
+          "newsletter_button_text": "Submit",
+          "show_share_buttons": true,
+          "show_image": true,
+          "image": ""
+        }
+      },
+      "1570430593529": {
+        "type": "featured-product",
+        "settings": {
+          "featured_product": "beginners_guide_v2",
+          "thumbnail_position": "beside",
+          "show_description": true,
+          "divider": false
+        }
+      },
+      "1570532289985": {
+        "type": "text-and-image",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Facetune_19-09-2019-11-20-39.JPG",
+          "image_width": 400,
+          "subtitle": "About me",
+          "title": "My fitness journey",
+          "text": "<p>I am Alina, a qualified fitness professional and an all-time cheerleader for healthy lifestyle without harsh diets, magic pills and fake promises.<\/p>\n<p>As a former professional dancer (over 10 years of ballet training in a Russian Theatre of Dance, winner at International Dance Competitions and at one point owner of a dance school in Ireland), I moved fully into the fitness industry over 8 years ago. Today I am based in London, one of the fitness capitals, sculpting bodies and changing lives.<\/p>\n<p><\/p>\n<p>My bespoke programs are designed to give women their desired results, should it be weight loss, toning, bulking without compromise on mobility and agility of the body. Based on physiology, coupled with years of experience, most of my plans target ladies' most troublesome areas; think bums, tums and thighs.<\/p>\n<p><\/p>\n<p>Whatever your goal is, I have got you covered! xx<\/p>",
+          "button_label": "Optional button",
+          "button_link": "",
+          "layout": "left",
+          "divider": false
+        }
+      },
+      "1570586198612": {
+        "type": "testimonials",
+        "blocks": {
+          "1570586198612-0": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>Simply genius, my desk has never looked better. Beautiful craftsmanship too.<\/p>",
+              "image": "",
+              "author": "Gizmodo"
+            }
+          },
+          "1570586198612-1": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>I never realized what a distraction my cluttered desk was until Gather fixed&nbsp;<\/p>\n<p>it.<\/p>\n<p><\/p>\n<p><\/p>",
+              "image": "",
+              "author": "Techcrunch"
+            }
+          },
+          "1570586198612-2": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>I can focus so much more easily now that I don't have the desk of a small child.<\/p>",
+              "image": "",
+              "author": "New York Times"
+            }
+          }
+        },
+        "block_order": [
+          "1570586198612-0",
+          "1570586198612-1",
+          "1570586198612-2"
+        ],
+        "settings": {
+          "title": "Testimonials",
+          "align_text": "center",
+          "round_images": false,
+          "divider": false
+        }
       }
     },
     "content_for_index": [
-      "1499790529450",
-      "1498163293234",
-      "1499789718857",
-      "1566999869051",
       "1498501481980",
+      "1499790529450",
+      "1570532289985",
+      "1570586198612",
+      "1570415718276",
+      "1570430593529",
+      "1566999869051",
       "1499790731541",
-      "1499790633921",
-      "1499790782828"
+      "1570414502166"
     ]
   },
   "presets": {

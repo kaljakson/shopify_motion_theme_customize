@@ -92,7 +92,6 @@
                 </button>
               </div>
             </div>
-
             {% if section.settings.main_menu_alignment == 'center-split' %}
               {% include 'header-split-nav' %}
             {% endif %}
@@ -104,11 +103,11 @@
             {% endif %}
           {% endif %}
 
-          <div class="header-item header-item--icons">
+          <div class="header-item header-item--icons">          
+            {% include 'header-logo-social', block: block, first_instance: true %}
             {% include 'header-icons' %}
           </div>
         </div>
-
         {% if section.settings.main_menu_alignment == 'center' %}
           <div class="text-center">
             {% include 'header-desktop-nav' %}
