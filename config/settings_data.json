@@ -129,9 +129,9 @@
           "1570425931225": {
             "type": "logo",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/logo2_ef63b9c8-127f-4d67-9ad1-54eac6ed3de0.png",
+              "logo": "shopify:\/\/shop_images\/alignblacklogo.png",
               "logo-inverted": "",
-              "desktop_logo_width": 400,
+              "desktop_logo_width": 190,
               "mobile_logo_width": 200
             }
           }
@@ -235,6 +235,7 @@
       },
       "1498501481980": {
         "type": "fading-images",
+        "disabled": true,
         "blocks": {
           "1498501481980-0": {
             "type": "image",
@@ -322,13 +323,13 @@
         "settings": {
           "collection": "",
           "subtitle": "Brand new",
-          "title": "Collection callout",
-          "text": "Use this section to easily call attention to one of your collections. We'll show photos of the first 5 products.",
-          "cta_text1": "Shop Jackets",
+          "title": "My fitness journey",
+          "text": "I am Alina, a qualified fitness professional and an all-time cheerleader for healthy lifestyle without harsh diets, magic pills and fake promises.\n\nAs a former professional dancer (over 10 years of ballet training in a Russian Theatre of Dance, winner at International Dance Competitions and at one point owner of a dance school in Ireland), I moved fully into the fitness industry over 8 years ago. Today I am based in London, one of the fitness capitals, sculpting bodies and changing lives.\n\nMy bespoke programs are designed to give women their desired results, should it be weight loss, toning, bulking without compromise on mobility and agility of the body. Based on physiology, coupled with years of experience, most of my plans target ladies' most troublesome areas; think bums, tums and thighs.\n\nWhatever your goal is, I have got you covered! xx",
+          "cta_text1": "",
           "cta_link1": "",
-          "cta_text2": "Shop All",
+          "cta_text2": "",
           "cta_link2": "",
-          "layout": "right",
+          "layout": "left",
           "divider": false
         }
       },
@@ -574,6 +575,7 @@
       },
       "1570415718276": {
         "type": "instagram",
+        "disabled": true,
         "settings": {
           "title": "Find us on Instagram - please add white dividers between the images",
           "client_id": "3155485111.2a46ab3.6dc62118303f44b38129b90b10398550",
@@ -615,7 +617,7 @@
         "type": "text-and-image",
         "settings": {
           "image": "shopify:\/\/shop_images\/Facetune_19-09-2019-11-20-39.JPG",
-          "image_width": 400,
+          "image_width": 500,
           "subtitle": "About me",
           "title": "My fitness journey",
           "text": "<p>I am Alina, a qualified fitness professional and an all-time cheerleader for healthy lifestyle without harsh diets, magic pills and fake promises.<\/p>\n<p>As a former professional dancer (over 10 years of ballet training in a Russian Theatre of Dance, winner at International Dance Competitions and at one point owner of a dance school in Ireland), I moved fully into the fitness industry over 8 years ago. Today I am based in London, one of the fitness capitals, sculpting bodies and changing lives.<\/p>\n<p><\/p>\n<p>My bespoke programs are designed to give women their desired results, should it be weight loss, toning, bulking without compromise on mobility and agility of the body. Based on physiology, coupled with years of experience, most of my plans target ladies' most troublesome areas; think bums, tums and thighs.<\/p>\n<p><\/p>\n<p>Whatever your goal is, I have got you covered! xx<\/p>",
@@ -664,17 +666,126 @@
           "round_images": false,
           "divider": false
         }
+      },
+      "1577879393150": {
+        "type": "slideshow",
+        "blocks": {
+          "1577879393150-0": {
+            "type": "image",
+            "settings": {
+              "title": "Endless\npossibilities.",
+              "title_size": 80,
+              "subheading": "Bring your brand to life",
+              "link": "shopify:\/\/collections\/all",
+              "link_text": "Optional button",
+              "text_align": "vertical-bottom horizontal-left",
+              "image": "shopify:\/\/shop_images\/Facetune_29-09-2019-15-56-49.JPG",
+              "focal_point": "center center"
+            }
+          },
+          "1577879393150-1": {
+            "type": "image",
+            "settings": {
+              "title": "Two line\nslide titles.",
+              "title_size": 80,
+              "subheading": "And big, beautiful imagery",
+              "link": "shopify:\/\/pages\/workouts",
+              "link_text": "Optional button",
+              "text_align": "vertical-bottom horizontal-right",
+              "image": "shopify:\/\/shop_images\/Facetune_19-09-2019-11-20-39.JPG",
+              "focal_point": "center center"
+            }
+          },
+          "1570618512055": {
+            "type": "image",
+            "settings": {
+              "title": "Two line\nslide title.",
+              "title_size": 80,
+              "subheading": "And an optional subheading",
+              "link": "shopify:\/\/collections\/all",
+              "link_text": "Optional button",
+              "text_align": "vertical-bottom horizontal-right",
+              "image": "shopify:\/\/shop_images\/Facetune_18-08-2019-15-03-09_2.JPG",
+              "focal_point": "center center"
+            }
+          },
+          "1570619040749": {
+            "type": "image",
+            "settings": {
+              "title": "Two line\nslide title.",
+              "title_size": 80,
+              "subheading": "And an optional subheading",
+              "link": "shopify:\/\/collections\/all",
+              "link_text": "Optional button",
+              "text_align": "vertical-bottom horizontal-left",
+              "image": "shopify:\/\/shop_images\/Facetune_10-09-2019-16-20-08.JPG",
+              "focal_point": "center center"
+            }
+          }
+        },
+        "block_order": [
+          "1577879393150-0",
+          "1577879393150-1",
+          "1570618512055",
+          "1570619040749"
+        ],
+        "settings": {
+          "section_height": "750px",
+          "mobile_height": "auto",
+          "style": "arrows",
+          "autoplay": true,
+          "autoplay_speed": 5
+        }
+      },
+      "1570622693105": {
+        "type": "advanced-content",
+        "blocks": {
+          "1570622693105-1": {
+            "type": "html",
+            "settings": {
+              "code": "<div id=\"insta-feed\"><\/div>",
+              "width": "100%",
+              "alignment": "center"
+            }
+          }
+        },
+        "block_order": [
+          "1570622693105-1"
+        ],
+        "settings": {
+          "full_width": false,
+          "space_around": true
+        }
+      },
+      "1570625388874": {
+        "type": "collection-callout",
+        "disabled": true,
+        "settings": {
+          "collection": "my-photos",
+          "subtitle": "About me",
+          "title": "My fitness journey",
+          "text": "I am Alina, a qualified fitness professional and an all-time cheerleader for healthy lifestyle without harsh diets, magic pills and fake promises.\n\nAs a former professional dancer (over 10 years of ballet training in a Russian Theatre of Dance, winner at International Dance Competitions and at one point owner of a dance school in Ireland), I moved fully into the fitness industry over 8 years ago. Today I am based in London, one of the fitness capitals, sculpting bodies and changing lives.\n\nMy bespoke programs are designed to give women their desired results, should it be weight loss, toning, bulking without compromise on mobility and agility of the body. Based on physiology, coupled with years of experience, most of my plans target ladies' most troublesome areas; think bums, tums and thighs.\n\nWhatever your goal is, I have got you covered! xx",
+          "cta_text1": "",
+          "cta_link1": "",
+          "cta_text2": "",
+          "cta_link2": "",
+          "layout": "right",
+          "divider": false
+        }
       }
     },
     "content_for_index": [
+      "1577879393150",
       "1498501481980",
       "1499790529450",
       "1570532289985",
+      "1570625388874",
+      "1570430593529",
       "1570586198612",
       "1570415718276",
-      "1570430593529",
       "1566999869051",
       "1499790731541",
+      "1570622693105",
       "1570414502166"
     ]
   },
