@@ -141,7 +141,7 @@
         ],
         "settings": {
           "main_menu_link_list": "main-menu",
-          "main_menu_alignment": "left-center",
+          "main_menu_alignment": "left",
           "header_style": "sticky",
           "sticky_index": false,
           "sticky_collection": false,
