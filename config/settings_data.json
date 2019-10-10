@@ -86,11 +86,11 @@
     "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
     "social_twitter_link": "https:\/\/twitter.com\/shopify",
     "social_pinterest_link": "",
-    "social_instagram_link": "https:\/\/www.instagram.com\/krissycela\/?hl=en",
+    "social_instagram_link": "https:\/\/www.instagram.com\/alignwithalina",
     "social_snapchat_link": "",
     "social_tumblr_link": "",
     "social_linkedin_link": "",
-    "social_youtube_link": "",
+    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCV1ABQo4t3SXkPZIPs-8gZA",
     "social_vimeo_link": "",
     "share_facebook": true,
     "share_twitter": true,
@@ -141,12 +141,12 @@
         ],
         "settings": {
           "main_menu_link_list": "main-menu",
-          "main_menu_alignment": "left",
+          "main_menu_alignment": "left-center",
           "header_style": "sticky",
           "sticky_index": false,
           "sticky_collection": false,
-          "header_search_enable": true,
-          "type_navigation_size": 20,
+          "header_search_enable": false,
+          "type_navigation_size": 16,
           "type_navigation_style": true,
           "show_announcement": false,
           "announcement_text": "Free shipping and returns",
@@ -185,8 +185,8 @@
             "type": "newsletter",
             "settings": {
               "show_footer_title": true,
-              "title": "Sign up and save",
-              "richtext": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.<\/p>",
+              "title": "Sign up for tips & tricks",
+              "richtext": "<p>Subscribe to get special offers, free giveaways and training tips and fitness news.<\/p>",
               "container_width": 40
             }
           }
@@ -540,7 +540,7 @@
         "settings": {
           "mode": "enabled",
           "popup_seconds": 5,
-          "popup_days": 30,
+          "popup_days": 10,
           "popup_title": "Sign up and save",
           "popup_image": "",
           "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.<\/p>",
@@ -633,25 +633,25 @@
           "1570586198612-0": {
             "type": "testimonial",
             "settings": {
-              "testimonial": "<p>Simply genius, my desk has never looked better. Beautiful craftsmanship too.<\/p>",
+              "testimonial": "<p>Simply genius, best workout program i have ever used. I cant wait for the next one!<\/p>",
               "image": "",
-              "author": "Gizmodo"
+              "author": "Kristina A"
             }
           },
           "1570586198612-1": {
             "type": "testimonial",
             "settings": {
-              "testimonial": "<p>I never realized what a distraction my cluttered desk was until Gather fixed&nbsp;<\/p>\n<p>it.<\/p>\n<p><\/p>\n<p><\/p>",
+              "testimonial": "<p>I never thought it would be possible to get my body back after pregnancy. Your amazing.<\/p>\n<p><\/p>\n<p><\/p>",
               "image": "",
-              "author": "Techcrunch"
+              "author": "Maria S"
             }
           },
           "1570586198612-2": {
             "type": "testimonial",
             "settings": {
-              "testimonial": "<p>I can focus so much more easily now that I don't have the desk of a small child.<\/p>",
+              "testimonial": "<p>This has become my fitness guide. I have seen so much change and I feel strong.&nbsp;<\/p>",
               "image": "",
-              "author": "New York Times"
+              "author": "Galia D"
             }
           }
         },
@@ -772,6 +772,40 @@
           "layout": "right",
           "divider": false
         }
+      },
+      "page-contact-template": {
+        "type": "page-contact-template",
+        "blocks": {
+          "1570634039088": {
+            "type": "text-and-image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Facetune_19-09-2019-11-20-39.JPG",
+              "image_width": 350,
+              "subtitle": "",
+              "title": "",
+              "text": "<p>For any media or brand enquiries, or to book me for a speaking engagement please email my manager: Francesca Zampi francesca@thefound.co.uk<\/p>\n<p>All E-mails are personally answered by me again 24 hours. Please check junk\/spam mail. Feel free to ask me anything, I am here to help.<\/p>",
+              "button_label": "",
+              "button_link": "",
+              "layout": "left"
+            }
+          },
+          "page-contact-template-0": {
+            "type": "contact-form",
+            "settings": {
+              "title": "",
+              "show_phone": false,
+              "narrow_column": true
+            }
+          }
+        },
+        "block_order": [
+          "1570634039088",
+          "page-contact-template-0"
+        ],
+        "settings": {
+          "page_title_enable": true,
+          "page_content_enable": true
+        }
       }
     },
     "content_for_index": [
@@ -785,8 +819,8 @@
       "1570415718276",
       "1566999869051",
       "1499790731541",
-      "1570622693105",
-      "1570414502166"
+      "1570414502166",
+      "1570622693105"
     ]
   },
   "presets": {
