@@ -47,7 +47,7 @@
     "animate_images_style": "zoom-fade",
     "animate_buttons": true,
     "animate_underlines": true,
-    "vendor_enable": true,
+    "vendor_enable": false,
     "sku_enable": false,
     "quantity_enable": false,
     "variant_labels_enable": true,
@@ -57,13 +57,13 @@
     "inventory_threshold": 10,
     "product_save_amount": true,
     "product_save_type": "dollar",
-    "product_zoom_enable": true,
-    "quick_shop_enable": true,
+    "product_zoom_enable": false,
+    "quick_shop_enable": false,
     "quick_shop_text": "Quick view",
     "product_hover_image": false,
-    "product_grid_image_size": "natural",
+    "product_grid_image_size": "square",
     "product_color_swatches": false,
-    "collection_color_swatches": false,
+    "collection_color_swatches": true,
     "product_video_width": "1280",
     "product_video_height": "720",
     "product_video_style": "muted",
@@ -80,7 +80,7 @@
     "cart_notes_enable": false,
     "cart_terms_conditions_enable": false,
     "cart_terms_conditions_link": "",
-    "enable_currencies": true,
+    "enable_currencies": false,
     "currency_format": "money_format",
     "supported_currencies": "USD CAD INR GBP AUD EUR JPY",
     "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
@@ -292,13 +292,12 @@
       },
       "1566999869051": {
         "type": "featured-collection-switcher",
-        "disabled": true,
         "settings": {
           "title": "Most popular",
           "collection1": "frontpage",
           "collection2": "",
-          "per_row": 4,
-          "view_all": true,
+          "per_row": 2,
+          "view_all": false,
           "divider": false
         }
       },
@@ -539,8 +538,8 @@
         "type": "newsletter-popup",
         "settings": {
           "mode": "enabled",
-          "popup_seconds": 5,
-          "popup_days": 10,
+          "popup_seconds": 2,
+          "popup_days": 2,
           "popup_title": "Sign up and save",
           "popup_image": "",
           "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.<\/p>",
@@ -609,7 +608,7 @@
         "settings": {
           "featured_product": "beginners_guide_v2",
           "thumbnail_position": "beside",
-          "show_description": true,
+          "show_description": false,
           "divider": false
         }
       },
@@ -708,26 +707,12 @@
               "image": "shopify:\/\/shop_images\/Facetune_18-08-2019-15-03-09_2.JPG",
               "focal_point": "center center"
             }
-          },
-          "1570619040749": {
-            "type": "image",
-            "settings": {
-              "title": "Two line\nslide title.",
-              "title_size": 80,
-              "subheading": "And an optional subheading",
-              "link": "shopify:\/\/collections\/all",
-              "link_text": "Optional button",
-              "text_align": "vertical-bottom horizontal-left",
-              "image": "shopify:\/\/shop_images\/Facetune_10-09-2019-16-20-08.JPG",
-              "focal_point": "center center"
-            }
           }
         },
         "block_order": [
           "1577879393150-0",
           "1577879393150-1",
-          "1570618512055",
-          "1570619040749"
+          "1570618512055"
         ],
         "settings": {
           "section_height": "750px",
@@ -740,6 +725,14 @@
       "1570622693105": {
         "type": "advanced-content",
         "blocks": {
+          "1570727441496": {
+            "type": "html",
+            "settings": {
+              "code": "<h2 style=\"text-align: center;\">Latest on Instagram<\/h2>",
+              "width": "100%",
+              "alignment": "top-middle"
+            }
+          },
           "1570622693105-1": {
             "type": "html",
             "settings": {
@@ -750,27 +743,12 @@
           }
         },
         "block_order": [
+          "1570727441496",
           "1570622693105-1"
         ],
         "settings": {
           "full_width": false,
           "space_around": true
-        }
-      },
-      "1570625388874": {
-        "type": "collection-callout",
-        "disabled": true,
-        "settings": {
-          "collection": "my-photos",
-          "subtitle": "About me",
-          "title": "My fitness journey",
-          "text": "I am Alina, a qualified fitness professional and an all-time cheerleader for healthy lifestyle without harsh diets, magic pills and fake promises.\n\nAs a former professional dancer (over 10 years of ballet training in a Russian Theatre of Dance, winner at International Dance Competitions and at one point owner of a dance school in Ireland), I moved fully into the fitness industry over 8 years ago. Today I am based in London, one of the fitness capitals, sculpting bodies and changing lives.\n\nMy bespoke programs are designed to give women their desired results, should it be weight loss, toning, bulking without compromise on mobility and agility of the body. Based on physiology, coupled with years of experience, most of my plans target ladies' most troublesome areas; think bums, tums and thighs.\n\nWhatever your goal is, I have got you covered! xx",
-          "cta_text1": "",
-          "cta_link1": "",
-          "cta_text2": "",
-          "cta_link2": "",
-          "layout": "right",
-          "divider": false
         }
       },
       "page-contact-template": {
@@ -813,14 +791,13 @@
       "1498501481980",
       "1499790529450",
       "1570532289985",
-      "1570625388874",
       "1570430593529",
+      "1566999869051",
       "1570586198612",
       "1570415718276",
-      "1566999869051",
       "1499790731541",
-      "1570414502166",
-      "1570622693105"
+      "1570622693105",
+      "1570414502166"
     ]
   },
   "presets": {

@@ -69,6 +69,8 @@
   {%- endif -%}
 
   {% include 'shogun-head' %}
+{% include 'weglot_hreftags' %}
+{% include 'weglot_switcher' %}
 </head>
 
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.enable_currencies %} currencies-enabled{% endif %}" data-transitions="{{ settings.animate_page_transitions }}">
