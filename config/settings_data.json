@@ -57,7 +57,7 @@
     "inventory_threshold": 10,
     "product_save_amount": true,
     "product_save_type": "dollar",
-    "product_zoom_enable": false,
+    "product_zoom_enable": true,
     "quick_shop_enable": false,
     "quick_shop_text": "Quick view",
     "product_hover_image": false,
@@ -608,22 +608,22 @@
         "settings": {
           "featured_product": "beginners_guide_v2",
           "thumbnail_position": "beside",
-          "show_description": false,
+          "show_description": true,
           "divider": false
         }
       },
       "1570532289985": {
         "type": "text-and-image",
         "settings": {
-          "image": "shopify:\/\/shop_images\/Facetune_19-09-2019-11-20-39.JPG",
+          "image": "shopify:\/\/shop_images\/Facetune_10-09-2019-16-20-08.JPG",
           "image_width": 500,
           "subtitle": "About me",
           "title": "My fitness journey",
           "text": "<p>I am Alina, a qualified fitness professional and an all-time cheerleader for healthy lifestyle without harsh diets, magic pills and fake promises.<\/p>\n<p>As a former professional dancer (over 10 years of ballet training in a Russian Theatre of Dance, winner at International Dance Competitions and at one point owner of a dance school in Ireland), I moved fully into the fitness industry over 8 years ago. Today I am based in London, one of the fitness capitals, sculpting bodies and changing lives.<\/p>\n<p><\/p>\n<p>My bespoke programs are designed to give women their desired results, should it be weight loss, toning, bulking without compromise on mobility and agility of the body. Based on physiology, coupled with years of experience, most of my plans target ladies' most troublesome areas; think bums, tums and thighs.<\/p>\n<p><\/p>\n<p>Whatever your goal is, I have got you covered! xx<\/p>",
-          "button_label": "Optional button",
+          "button_label": "",
           "button_link": "",
           "layout": "left",
-          "divider": false
+          "divider": true
         }
       },
       "1570586198612": {

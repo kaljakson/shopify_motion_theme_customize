@@ -23,16 +23,16 @@
             {{ form.errors | default_errors }}
 
             <div class="grid grid--small">
-              <div class="grid__item medium-up--five-twelfths">
+              <div class="grid__item medium-up--four-twelfths">
                 <label for="ContactFormName-{{ section.id }}">{{ 'contact.form.name' | t }}</label>
                 <input type="text" id="ContactFormName-{{ section.id }}" class="input-full" name="contact[name]" autocapitalize="words" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}">
               </div>
 
-              <div class="grid__item medium-up--five-twelfths">
+              <div class="grid__item medium-up--four-twelfths">
                 <label for="ContactFormEmail-{{ section.id }}">{{ 'contact.form.email' | t }}</label>
                 <input type="email" id="ContactFormEmail-{{ section.id }}" class="input-full" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
               </div>
-              <div class="grid__item medium-up--two-twelfths">              
+              <div class="grid__item medium-up--four-twelfths">              
                   <button type="submit" class="btn contact-send-btn" style="width:100%;">
                    {{ 'contact.form.send' | t }}
                   </button>
